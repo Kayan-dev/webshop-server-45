@@ -6,10 +6,8 @@ const router = new Router();
 
 router.get("/", async (req, res, next) => {
   try {
-    const categories = await Category.findAll({
-      include: [Product],
-    });
-    res.json({ categories });
+    const products = await Product.findAll({});
+    res.json(products);
   } catch (e) {
     next(e);
   }
